@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <title>首页_${productName}</title>
+    <script type="text/javascript" src="${productUrl}js/jquery.js"></script>
+</head>
+<body>
+<h3>欢迎使用${productName}</h3>
+<div>
+
+<div>
+    <#list operates as item>
+    <div>
+        ${item.name}
+        <#list item.subTypes as sub>
+        <div>
+            &nbsp;&nbsp;&nbsp;|-${sub.name}
+            <a href="/generateQuestion?id=${sub.id}&name=${sub.name}&count=100">随机100题</a>
+            <a href="/generateQuestion?id=${sub.id}&name=${sub.name}">全部</a>
+        </div>
+        </#list>
+    </div>
+    </#list>
+
+</div>
+
+
+</body>
+</html>
